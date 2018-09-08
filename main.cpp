@@ -27,15 +27,15 @@ using namespace std;
 
 int main(int argc, char** argv) {
 
-      srand(time(NULL));
-    
+    srand(time(NULL));
+
     for (int i = 0; i < 100; i++) {
         cout << "random - " << i << " - " << Random_Number_Generator::generateRandomNumber(10, 50) << endl;
     }
 
     int array[100] = {};
 
-  
+
 
     for (unsigned short int i = 0; i < 100; i++) {
         *(array + i) = (rand() % 101);

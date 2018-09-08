@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/CPP_11_Uniform_Unbiased_Rand_Num_Gen.o \
 	${OBJECTDIR}/Random_Number_Generator.o \
 	${OBJECTDIR}/main.o
 
@@ -62,6 +63,11 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/bubble_sort.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/bubble_sort ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/CPP_11_Uniform_Unbiased_Rand_Num_Gen.o: CPP_11_Uniform_Unbiased_Rand_Num_Gen.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CPP_11_Uniform_Unbiased_Rand_Num_Gen.o CPP_11_Uniform_Unbiased_Rand_Num_Gen.cpp
 
 ${OBJECTDIR}/Random_Number_Generator.o: Random_Number_Generator.cpp
 	${MKDIR} -p ${OBJECTDIR}
