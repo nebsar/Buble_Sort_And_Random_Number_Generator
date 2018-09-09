@@ -14,10 +14,12 @@
 #include <cstdlib>
 #include <iostream>
 #include <ctime>
+#include <chrono>
 
 #include "Random_Number_Generator.h"
 
 using namespace std;
+using namespace std::chrono;
 
 /*
  * 
@@ -26,6 +28,12 @@ using namespace std;
 #define ARRAYLEN(array) (sizeof(array)/sizeof(int))
 
 int main(int argc, char** argv) {
+
+    long int ms = duration_cast< milliseconds >( //get system time
+            system_clock::now().time_since_epoch()
+            ).count();
+
+      cout<<"system time:  " <<ms<<endl;
 
     srand(time(NULL));
 
