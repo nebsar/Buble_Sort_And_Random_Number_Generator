@@ -29,12 +29,6 @@ using namespace std::chrono;
 
 int main(int argc, char** argv) {
 
-    long int ms = duration_cast< milliseconds >( //get system time
-            system_clock::now().time_since_epoch()
-            ).count();
-
-      cout<<"system time:  " <<ms<<endl;
-
     srand(time(NULL));
 
     for (int i = 0; i < 100; i++) {
@@ -55,6 +49,10 @@ int main(int argc, char** argv) {
 
 
     int temp2 = 0;
+
+    long int ms = duration_cast< microseconds >(//get system time
+            system_clock::now().time_since_epoch()
+            ).count();
 
     for (unsigned short i = 0; i < ARRAYLEN(array); i++) {
         int temp = array[i];
@@ -78,6 +76,14 @@ int main(int argc, char** argv) {
 
 
     }
+
+    long int ms2 = duration_cast< microseconds >(//get system time
+            system_clock::now().time_since_epoch()
+            ).count();
+
+    long int difference = ms2 - ms;
+    
+    cout << "difference:  " << difference << endl;
 
     //    for (unsigned short i = 0; i < ARRAYLEN(array); i++) {
     //        for (unsigned short j = 0; j < ARRAYLEN(array) - 1; j++) {
